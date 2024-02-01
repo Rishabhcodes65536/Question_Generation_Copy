@@ -3,7 +3,8 @@ Check for Compliance Policy Results as per Stripe's Marketing Treasury doc
 
 Steps for Running 
 1. Git Clone 
-2. sudo docker-compose up -d --build api_gateway 
+2. Create a .env file with OPENAI_API_KEY="Enter the API Key"
+3. sudo docker-compose up -d --build api_gateway 
 
 Live API ENDPoint 
 curl -X POST "http://20.80.46.130:8081/internal/compliance_testing/analyse/website" \
