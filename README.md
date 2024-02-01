@@ -1,5 +1,5 @@
 # Compliance POC
-Check for Compliance Policy Results as per Stripe's Marketing Treasury doc \n
+Check for Compliance Policy Results as per Stripe's Marketing Treasury doc
 
 Steps for Running 
 1. Git Clone 
