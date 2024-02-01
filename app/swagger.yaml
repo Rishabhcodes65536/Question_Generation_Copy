@@ -1,0 +1,54 @@
+openapi: 3.0.0
+
+servers:
+  - url: https://172.17.0.1/internal/compliance_testing
+
+info:
+  version: 1.0.0
+  title: Compliance Services API Gateway
+  contact:
+    email: sanyam12sks@gmail.com
+
+paths:
+  /health:
+    get:
+      summary: check server status
+      description: check server status
+      tags:
+        - CRUD API
+      operationId: endpoints.core.health
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+
+  /analyse/website:
+    post:
+      summary: Send website URL for Compliance Testing
+      description: Send website URL for Compliance Testing
+      tags:
+        - URL
+      operationId: endpoints.core.analyse_with_llm
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/analyse_with_llm_request'
+      responses:
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+
+components:
+  schemas:
+    analyse_with_llm_request:
+      type: object
+      required:
+        - url
